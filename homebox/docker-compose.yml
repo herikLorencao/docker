@@ -1,0 +1,20 @@
+services:
+    homebox:
+        image: ghcr.io/sysadminsmedia/homebox:latest
+        restart: always
+        environment:
+            - HBOX_LOG_LEVEL=info
+            - HBOX_LOG_FORMAT=text
+            - HBOX_WEB_MAX_UPLOAD_SIZE=10
+            # Please consider allowing analytics to help us improve Homebox (basic computer information, no personal data)
+            - HBOX_OPTIONS_ALLOW_ANALYTICS=false
+            # Use a strong random string for the pepper in production, it will be used to hash API keys and make them more secure
+            - HBOX_AUTH_API_KEY_PEPPER=some_random_string
+        volumes:
+            - homebox-data:/data/
+        ports:
+            - 3100:7745
+
+volumes:
+    homebox-data:
+        driver: local
