@@ -9,7 +9,7 @@ services:
             # Please consider allowing analytics to help us improve Homebox (basic computer information, no personal data)
             - HBOX_OPTIONS_ALLOW_ANALYTICS=false
             # Use a strong random string for the pepper in production, it will be used to hash API keys and make them more secure
-            - HBOX_AUTH_API_KEY_PEPPER=some_random_string
+            - HBOX_AUTH_API_KEY_PEPPER=hjM3u0wY31sct8YsMejY9A8c48DWGmu7KkWFATNyKLYT7JPIlBxzWiBsaj5XuMAQ
         volumes:
             - homebox-data:/data/
         ports:
